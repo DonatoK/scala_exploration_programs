@@ -1,20 +1,17 @@
 // playing with functions in scala
 
 import scala.io._
-// function 1: signum function, returns 1 for a postive 0 for a negitive
+// function 1: signum function, returns if a entered number is postive, 0, or negitive
 
-val display_message = StdIn.readLine("enter a number: ")
+val display_message = StdIn.readLine("enter a number: ").toInt	
 
-def signum(x: UnInt): = val zero = "zero"
-			val positive = "positive"
-   			val negitive = "negitive"
+def signum(x: Int) = 
 			if (x<0)	
-			negitive		
-			if(x === 0)
-			zero
-			if (x>=1)
-			positive
+			"negitive"		
+			else if(x == 0)
+			"zero"
+			else if (x>=1)
+			"positive"
 			 
-signum(display_message)
-	
-println(s" The significant number is " )
+val result = signum(display_message)
+println(s" The significant number is " + result)
