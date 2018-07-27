@@ -5,7 +5,7 @@ import scala.io._
 
 //used a while loop to do for(i=10, i>=0; i--) to repeat signum function
 
-//writing a procedure which returns nothing and counts down form 10
+//writing a procedure which returns nothing and counts down from a given value.
 
 var repeat_limit = 10
 
@@ -17,17 +17,23 @@ def signum(x: Int) =
 			else if (x>=1)
 			"positive"
 
-def countdown(n: Int)
+def countdown(start: Int)
 {
-
-
+  var counter = start
+  while (counter >= 0)
+  {
+    println(s" Program end " + counter)
+    counter -= 1
+  }  
 }
+
 
 while(repeat_limit>=0)
 {
-
   val display_message = StdIn.readLine(repeat_limit+" enter a number: ").toInt
   val result = signum(display_message)
   println(s" The significant number is " + result)
   repeat_limit -= 1
 }
+
+countdown(5)
