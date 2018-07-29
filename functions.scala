@@ -10,7 +10,7 @@ import scala.Char._
 
 // stringAddder: function  to add the integer values of an input string. size of string
 
-var repeat_limit = 10
+var repeat_limit = 2
 
 def signum(x: Int) = 
 			if (x<0)	
@@ -41,8 +41,16 @@ def stringAdder(inputString: String) =
 			sum			
 }
 
-
-
+def stringProduct(inputString: String) =
+{
+                        val charArry = inputString.toCharArray
+                        var sum      = 1
+                        for(i <- 0 to inputString.length -1)
+                        {               
+                          sum = sum * char2int(charArry(i))
+                        } 
+                        sum
+}
 
 while(repeat_limit>=0)
 {
@@ -54,5 +62,8 @@ while(repeat_limit>=0)
 
 countdown(5)
 val hello_value = stringAdder("Hello")
-println(s" hello equals" + hello_value)
+println(s" hello equals  " + hello_value)
+val hello_value2 = stringProduct("Hello")
+println(s" hello equals " + hello_value2)
+
 
