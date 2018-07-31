@@ -15,9 +15,14 @@ import scala.collection.immutable._
 
 // stringProductLoopless: same as stringProduct but with no loop. tried stringOps but the result is weird.
 
+// xToPower: Function to print x to the n
 
 var repeat_limit = 2
 
+def xToPower(power: Int, x: Int) =
+{
+
+}
 def signum(x: Int) = 
 			if (x<0)	
 			"negitive"		
