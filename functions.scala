@@ -15,13 +15,29 @@ import scala.collection.immutable._
 
 // stringProductLoopless: same as stringProduct but with no loop. tried stringOps but the result is weird.
 
-// xToPower: Function to print x to the n
+// xToPower: Function to print x to the n. overflows idk why.
 
 var repeat_limit = 2
 
-def xToPower(power: Int, x: Int) =
+def xToPower(power :Int, x: Int): Int =
 {
+  if(power == 0) 1
 
+  if (power >0)
+    { 
+    if(power % 2 == 0)  
+      {
+	xToPower(power/2, x) * xToPower(power/2,x) 
+      }
+    else 
+      {
+	x * xToPower(power-1, x)
+      }      
+    }
+  else
+    {
+      1/xToPower(-power, x)
+    }
 }
 def signum(x: Int) = 
 			if (x<0)	
@@ -87,4 +103,6 @@ val hello_value2 = stringProduct("Hello")
 println(s" hello equals " + hello_value2)
 val hello_value3 = stringProductLoopless("Hello")
 println(s" hello equals " + hello_value3)
+//val x2PowerCheck = xToPower(1,1)
+//println(s" xToPower returned: " + x2PowerCheck)
 
