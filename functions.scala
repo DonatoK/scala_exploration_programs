@@ -17,7 +17,14 @@ import scala.collection.immutable._
 
 // xToPower: Function to print x to the n. overflows idk why.
 
+// randomArray: varible array of size 0 to n filled with random numbers.
+
 var repeat_limit = 2
+
+def randomArrary(sizeMinusOne: Int)
+{
+
+}
 
 def xToPower(power :Int, x: Int): Int =
 {
