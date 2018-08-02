@@ -1,8 +1,7 @@
 import scala.collection.mutable.ArrayBuffer
 import scala.util._
 
-// randomArray: varible array of size 0 to n filled with random numbers. wanted to return the array but it
-//                 prints it terminal.
+// randomArray: varible array of size 0 to n filled with random numbers. 
 
 // arraySwapAdjenct: swaps adjenct values in an array
 
@@ -16,15 +15,19 @@ def randomArray(size: Int) : ArrayBuffer[Int] =
     varArray += randomInts.nextInt
     countUp += 1
     }
-  // wanted to return this from the function but
-  // printing worked.
-    for( i <- 0 until varArray.length)
-      println(s"$i: ${varArray(i)}")
+  // printing here works as a procedure.
+  //  for( i <- 0 until varArray.length)
+  //    println(s"$i: ${varArray(i)}")
   varArray
 }
 
+def arraySwapAdjenct 
+{
+
+}
+
 val printArray = randomArray(3)
-//println(s" 3 random Numbers:  ")         ***planned but did not work***
-//for( i <- 0 until printArray.length)
-//  println(s"$i: ${printArray(i)}")
+println(s" 3 random Numbers:  ")     
+for( i <- 0 until printArray.length)
+  println(s"$i: ${printArray(i)}")
 
