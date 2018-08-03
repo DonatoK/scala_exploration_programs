@@ -3,10 +3,25 @@ import scala.util._
 
 // randomArray: Determine varible array of size 0 to n filled with random numbers. 
 
-// arraySwapAdjenct: loop swaps adjenct values in an passed array
+// arraySwapAdjenct: Loop swaps adjenct values in an passed array
 
-// arrayPosNeg: creates new array when given array of integers with positive original 
+// arrayPosNeg: Creates new array when given array of integers with positive original 
 //                ordered numbers followed by negitive original ordered numbers.  
+
+// ArrayAverage: Returns average of an array of doubles
+
+// ArrayInReverse; Returns a given integer array in reverse sorted order
+
+// BufferArrayInRevers: Returns an integer arrayBuffer in reverse sorted order
+
+// ArrayNoDuplicates: Returns given integer array with duplicates removed. 
+//  	    	        look in scaladoc
+
+// ArrayOnlyOneNeg:  Returns an integer array buffer from 
+		       a given integer arrayBuffer with only its first negitve 
+
+// ArrayTimeZones: makes a collection of times that are in america sorted with
+ 		     the "america/" prefix removed
 
 def randomArray(size: Int) : ArrayBuffer[Int] =
 {
