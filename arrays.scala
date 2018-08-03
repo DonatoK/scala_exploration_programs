@@ -1,9 +1,9 @@
 import scala.collection.mutable.ArrayBuffer
 import scala.util._
 
-// randomArray: varible array of size 0 to n filled with random numbers. 
+// randomArray: Determine varible array of size 0 to n filled with random numbers. 
 
-// arraySwapAdjenct: swaps adjenct values in an array
+// arraySwapAdjenct: loop swaps adjenct values in an passed array 
 
 def randomArray(size: Int) : ArrayBuffer[Int] =
 {
@@ -21,13 +21,36 @@ def randomArray(size: Int) : ArrayBuffer[Int] =
   varArray
 }
 
-def arraySwapAdjenct 
+def arraySwapAdjenct(inputArray: Array[Int]): Array[Int] =
 {
-
+//  val result = for(elem <- inputArray) yield elem *2        *** trying yield***
+//  val result = for (elem <- inputArray if elem % 2 == 0)    *** not working ***
+  
+  //  Loop method
+  val i = 0
+  for( i <- 0 until inputArray.length-1)
+    {
+      if((i % 2) == 0)
+      { 
+        val temp = inputArray(i) 
+        inputArray.update(i,inputArray(i+1))
+        inputArray.update((i+1), temp) 
+      }
+    }
+  inputArray
 }
 
 val printArray = randomArray(3)
+
 println(s" 3 random Numbers:  ")     
 for( i <- 0 until printArray.length)
   println(s"$i: ${printArray(i)}")
+
+val mixup = Array(1,2,3,4,5,6)
+val printArray2 = arraySwapAdjenct(mixup)
+
+println(s" returned array values:  ")
+for( i <- 0 until printArray2.length)
+  println(s"$i: ${printArray2(i)}")
+
 
