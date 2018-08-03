@@ -45,13 +45,17 @@ def arraySwapAdjenct(inputArray: Array[Int]): Array[Int] =
 
 def arrayPosNeg (inputArray: Array[Int]): Array[Int]=
 {
-
-
+  val positives = for(elem <- inputArray if elem >=0) yield elem 
+  val negitives = for(elem <- inputArray if elem < 0) yield elem
+  var output = positives
+  output ++= negitives
+  output  
 }
 
 val printArray = randomArray(3)
 
 println(s" 3 random Numbers:  ")     
+
 for( i <- 0 until printArray.length)
   println(s"$i: ${printArray(i)}")
 
@@ -59,7 +63,15 @@ val mixup = Array(1,2,3,4,5,6)
 val printArray2 = arraySwapAdjenct(mixup)
 
 println(s" returned array values:  ")
+
 for( i <- 0 until printArray2.length)
   println(s"$i: ${printArray2(i)}")
 
+val mixedSigned = Array(1,-1,2,-6,-3,-2)
+val printArray3 = arrayPosNeg(mixedSigned)
+//println(s" mixedSigned: " + mixedSigned)       ** find way to print**
+//					          **array on 1 line**
+println(s" returned positve then negatives:  ")
+for( i <- 0 until printArray3.length)
+  println(s"$i: ${printArray3(i)}")
 
