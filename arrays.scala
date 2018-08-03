@@ -3,7 +3,10 @@ import scala.util._
 
 // randomArray: Determine varible array of size 0 to n filled with random numbers. 
 
-// arraySwapAdjenct: loop swaps adjenct values in an passed array 
+// arraySwapAdjenct: loop swaps adjenct values in an passed array
+
+// arrayPosNeg: creates new array when given array of integers with positive original 
+//                ordered numbers followed by negitive original ordered numbers.  
 
 def randomArray(size: Int) : ArrayBuffer[Int] =
 {
@@ -23,8 +26,8 @@ def randomArray(size: Int) : ArrayBuffer[Int] =
 
 def arraySwapAdjenct(inputArray: Array[Int]): Array[Int] =
 {
-//  val result = for(elem <- inputArray) yield elem *2        *** trying yield***
-//  val result = for (elem <- inputArray if elem % 2 == 0)    *** not working ***
+//  val result = for(elem <- inputArray) yield elem *2        *** trying using yield***
+//  val result = for (elem <- inputArray if elem % 2 == 0)    ***    not working ***
   
   //  Loop method
   val i = 0
@@ -38,6 +41,12 @@ def arraySwapAdjenct(inputArray: Array[Int]): Array[Int] =
       }
     }
   inputArray
+}
+
+def arrayPosNeg (inputArray: Array[Int]): Array[Int]=
+{
+
+
 }
 
 val printArray = randomArray(3)
