@@ -73,7 +73,7 @@ def arrayAverage (inputArray: Array[Double]): Double =
   outputAverage
 }
 
-def arrayInReverse( inputArray: Array[Int]): Array[Int]=
+def arrayInReverse(inputArray: Array[Int]): Array[Int]=
 {
  // val sortBuffer         = inputArray.sorted ** Buffer Array sort **
  Sorting.quickSort(inputArray) // **Array sort** 
@@ -81,6 +81,12 @@ def arrayInReverse( inputArray: Array[Int]): Array[Int]=
  val reverseSortedArray = inputArray.sortWith(_>_)
  reverseSortedArray
 }
+
+def arrayNoDuplicates(inputArray: Array[Int]): Array[Int] =
+{
+  
+}
+
 val printArray = randomArray(3)
 
 println(s" 3 random Numbers:  ")     
