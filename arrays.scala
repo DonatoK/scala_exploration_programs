@@ -84,7 +84,13 @@ def arrayInReverse(inputArray: Array[Int]): Array[Int]=
 
 def arrayNoDuplicates(inputArray: Array[Int]): Array[Int] =
 {
-  
+  val removedDuplicates = inputArray.distinct
+  removedDuplicates
+}
+
+def arrayyOnlyOneNeg( inputArray: Array[Int]): Array[Int] =
+{
+
 }
 
 val printArray = randomArray(3)
@@ -122,4 +128,8 @@ val printArray5 = arrayInReverse(reverseOrderThis)
 
 println(s"Reverse sorted Array was " + printArray5.mkString( "<", ", ", ">" ))
 
+val duplicates  = Array(1,1,1,1,2,4,3,4,5)
+val printArray6 = arrayNoDuplicates(duplicates)
+
+println(s"Reverse sorted Array was " + printArray6.mkString( "<", ", ", ">" ))
 
