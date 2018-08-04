@@ -10,7 +10,7 @@ import scala.util._
 
 // ArrayAverage: Returns average of an array of doubles
 
-// ArrayInReverse; Returns a given integer array in reverse sorted order
+// ArrayInReverse: Returns a given integer array in reverse sorted order
 
 // BufferArrayInRevers: Returns an integer arrayBuffer in reverse sorted order
 
@@ -74,6 +74,10 @@ def arrayAverage (inputArray: Array[Double]): Double =
   outputAverage
 }
 
+def ArrayInReverse( inputArray: Array[Int]): Array[Int]=
+{
+
+}
 val printArray = randomArray(3)
 
 println(s" 3 random Numbers:  ")     
