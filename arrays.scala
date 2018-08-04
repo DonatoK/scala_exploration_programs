@@ -10,9 +10,8 @@ import scala.util._
 
 // ArrayAverage: Returns average of an array of doubles
 
-// ArrayInReverse: Returns a given integer array in reverse sorted order
-
-// BufferArrayInRevers: Returns an integer arrayBuffer in reverse sorted order
+// ArrayInReverse: Returns a giveninteger array in reverse sorted order
+//		    minor changes need for a buffer array included
 
 // ArrayNoDuplicates: Returns given integer array with duplicates removed. 
 //  	    	        look in scaladoc
@@ -74,9 +73,13 @@ def arrayAverage (inputArray: Array[Double]): Double =
   outputAverage
 }
 
-def ArrayInReverse( inputArray: Array[Int]): Array[Int]=
+def arrayInReverse( inputArray: Array[Int]): Array[Int]=
 {
-
+ // val sortBuffer         = inputArray.sorted ** Buffer Array sort **
+ Sorting.quickSort(inputArray) // **Array sort** 
+ // No idea how to reverse the order on original array
+ val reverseSortedArray = inputArray.sortWith(_>_)
+ reverseSortedArray
 }
 val printArray = randomArray(3)
 
@@ -89,19 +92,28 @@ val mixup = Array(1,2,3,4,5,6)
 val printArray2 = arraySwapAdjenct(mixup)
 
 println(s" returned array values:  ")
-
+//////////////////
+//  Loop Print  //
+//////////////////
 for( i <- 0 until printArray2.length)
   println(s"$i: ${printArray2(i)}")
 
 val mixedSigned = Array(1,-1,2,-6,-3,-2)
 val printArray3 = arrayPosNeg(mixedSigned)
-//println(s" mixedSigned: " + mixedSigned)       ** find way to print**
-//					          **array on 1 line**
-println(s" returned positve then negatives:  ")
-for( i <- 0 until printArray3.length)
-  println(s"$i: ${printArray3(i)}")
+//////////////////
+// 1 Line Print //
+//////////////////
+println(s"the average of the Array was " + printArray3.mkString( "<", ", ", ">" ))
 
 val doubleArray = Array(1.0, 2.0)
 val printArray4 = arrayAverage(doubleArray)
 
 println(s"the average of the Array was " + printArray4)
+
+
+val reverseOrderThis  = Array(2,4,5,1,3) 
+val printArray5 = arrayInReverse(reverseOrderThis)
+
+println(s"Reverse sorted Array was " + printArray5.mkString( "<", ", ", ">" ))
+
+
