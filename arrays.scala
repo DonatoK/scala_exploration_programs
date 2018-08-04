@@ -20,8 +20,8 @@ import scala.util._
 //		      a given integer arrayBuffer with only its first negitve. 
 //                    requires ArrayInReverseBuffer
 
-// ArrayTimeZones: Makes a collection of times that are in america sorted with
-// 		     the "america/" prefix removed.
+// ArrayTimeZones: Procedure that makes a collection of times that are in america 
+//                   sorted with the "america/" prefix removed.
 
 def randomArray(size: Int) : ArrayBuffer[Int] =
 {
@@ -126,7 +126,21 @@ def arrayyOnlyOneNeg( inputArray: ArrayBuffer[Int]): ArrayBuffer[Int] =
   returnArray
 }
 
+def arrayTimeZones () 
+{
+  //string array 
+  val TimeZoneValues = java.util.TimeZone.getAvailableIDs
+  // figureout how to seperate out america/
+  for(i <- 0 until TimeZoneValues.length)
+  {
+    if(TimeZoneValues(i).startsWith("America"))
+    {
+      
+     // println(s"$i: ${TimeZoneValues(i)}") 
+    }
+  }
 
+}
 // function testing calls
 
 val printArray = randomArray(3)
@@ -169,10 +183,14 @@ val printArray6 = arrayNoDuplicates(duplicates)
 
 println(s"Duplicates removed  " + printArray6.mkString( "<", ", ", ">" ))
 
+///////////////////
+// Buffer Arrays //
+///////////////////
+
 val buffer =  ArrayBuffer[Int](-1,11,1,-2,4,-3,4,5)
 val keepFirstNeg = buffer //renaming
 val printArray7 = arrayyOnlyOneNeg(keepFirstNeg)
 
 println(s"keeping only the first negitive  " + printArray7.mkString( "<", ", ", ">" ))
 
-
+arrayTimeZones()

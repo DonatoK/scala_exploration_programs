@@ -5,17 +5,17 @@ import scala.Char._
 import scala.collection.immutable._
 import scala.util._
 
-// function 1: signum function, returns if a entered number is postive, 0, or negitive
+// Function 1: signum function, returns if a entered number is postive, 0, or negitive
 
-// used a while loop to do for(i=10, i>=0; i--) to repeat signum function
+// Used a while loop to do for(i=10, i>=0; i--) to repeat signum function
 
-// writing a procedure which returns nothing and counts down from a given value.i
+// Writing a procedure which returns nothing and counts down from a given value.i
 
-// stringAddder: function  to add the integer values of an input string. size of string
+// stringAddder: Function  to add the integer values of an input string. size of string
 
-// stringProduct: function to produce the product of all the valude in a string.
+// stringProduct: Function to produce the product of all the valude in a string.
 
-// stringProductLoopless: same as stringProduct but with no loop. tried stringOps but the result is weird.
+// stringProductLoopless: Same as stringProduct but with no loop. tried stringOps but the result is weird.
 
 // xToPower: Function to print x to the n. recursion overflows idk why. 
 
@@ -49,6 +49,9 @@ def signum(x: Int) =
 			else if (x>=1)
 			"positive"
 
+///////////////
+// PROCEDURE //
+///////////////
 def countdown(start: Int)
 {
   var counter = start
