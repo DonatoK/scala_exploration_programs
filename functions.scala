@@ -89,6 +89,9 @@ def stringProductLoopless(inputString: String) =
                         product
 }
 
+
+// Calls for functions for tesing operation.
+
 var repeat_limit = 2
 
 while(repeat_limit>=0)

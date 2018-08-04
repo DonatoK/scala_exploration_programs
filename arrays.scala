@@ -17,21 +17,21 @@ import scala.util._
 // ArrayNoDuplicates: Returns given integer array with duplicates removed. 
 //  	    	        look in scaladoc
 
-// ArrayOnlyOneNeg:  Returns an integer array buffer from 
-		       a given integer arrayBuffer with only its first negitve 
+// ArrayOnlyOneNeg: Returns an integer array buffer from 
+//		      a given integer arrayBuffer with only its first negitve. 
 
-// ArrayTimeZones: makes a collection of times that are in america sorted with
- 		     the "america/" prefix removed
+// ArrayTimeZones: Makes a collection of times that are in america sorted with
+// 		     the "america/" prefix removed.
 
 def randomArray(size: Int) : ArrayBuffer[Int] =
 {
   var countUp    = 0
-  var varArray    = ArrayBuffer[Int]()
+  var varArray   = ArrayBuffer[Int]()
   val randomInts = Random
   while (countUp < size)
     {
     varArray += randomInts.nextInt
-    countUp += 1
+    countUp  += 1
     }
   // printing here works as a procedure.
   //  for( i <- 0 until varArray.length)
@@ -41,12 +41,12 @@ def randomArray(size: Int) : ArrayBuffer[Int] =
 
 def arraySwapAdjenct(inputArray: Array[Int]): Array[Int] =
 {
-//  val result = for(elem <- inputArray) yield elem *2        *** trying using yield***
+//  val result = for (elem <- inputArray) yield elem *2        *** trying using yield***
 //  val result = for (elem <- inputArray if elem % 2 == 0)    ***    not working ***
   
   //  Loop method
   val i = 0
-  for( i <- 0 until inputArray.length-1)
+  for (i <- 0 until inputArray.length-1)
     {
       if((i % 2) == 0)
       { 
@@ -63,13 +63,15 @@ def arrayPosNeg (inputArray: Array[Int]): Array[Int]=
   val positives = for(elem <- inputArray if elem >=0) yield elem 
   val negitives = for(elem <- inputArray if elem < 0) yield elem
   var output = positives
-  output ++= negitives
+  output   ++= negitives
   output  
 }
 
 def arrayAverage (inputArray: Array[Double]): Double =
 {
-
+  val arraySum      = inputArray.sum
+  val outputAverage = arraySum/inputArray.length
+  outputAverage
 }
 
 val printArray = randomArray(3)
@@ -95,3 +97,7 @@ println(s" returned positve then negatives:  ")
 for( i <- 0 until printArray3.length)
   println(s"$i: ${printArray3(i)}")
 
+val doubleArray = Array(1.0, 2.0)
+val printArray4 = arrayAverage(doubleArray)
+
+println(s"the average of the Array was " + printArray4)
