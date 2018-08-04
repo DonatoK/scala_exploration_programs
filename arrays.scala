@@ -11,13 +11,14 @@ import scala.util._
 // ArrayAverage: Returns average of an array of doubles
 
 // ArrayInReverse: Returns a giveninteger array in reverse sorted order
-//		    minor changes need for a buffer array included
+// ArrayInReverseBuffer: Minor needed to take a buffer array.
 
 // ArrayNoDuplicates: Returns given integer array with duplicates removed. 
 //  	    	        look in scaladoc
 
 // ArrayOnlyOneNeg: Returns an integer array buffer from 
 //		      a given integer arrayBuffer with only its first negitve. 
+//                    requires ArrayInReverseBuffer
 
 // ArrayTimeZones: Makes a collection of times that are in america sorted with
 // 		     the "america/" prefix removed.
@@ -82,16 +83,51 @@ def arrayInReverse(inputArray: Array[Int]): Array[Int]=
  reverseSortedArray
 }
 
-def arrayNoDuplicates(inputArray: Array[Int]): Array[Int] =
+def arrayInReverseBuffer (inputArray: ArrayBuffer[Int]): ArrayBuffer[Int]=
+{
+  val sortBuffer         = inputArray.sorted //** Buffer Array sort **
+ //Sorting.quickSort(inputArray) // **Array sort**
+ // No idea how to reverse the order on original array
+ val reverseSortedArray = sortBuffer.sortWith(_>_)
+ reverseSortedArray
+}
+
+
+def arrayNoDuplicates (inputArray: Array[Int]): Array[Int] =
 {
   val removedDuplicates = inputArray.distinct
   removedDuplicates
 }
 
-def arrayyOnlyOneNeg( inputArray: Array[Int]): Array[Int] =
+def arrayyOnlyOneNeg( inputArray: ArrayBuffer[Int]): ArrayBuffer[Int] =
 {
-
+  val negitiveValuePosition = ArrayBuffer[Int]()
+  
+  // Accomplishing this by looping over the array and recording the position.
+  for( i <- 0 until inputArray.length)
+  { // Loop over array and record negitive value positions
+    if(inputArray(i) < 0)
+    {
+      negitiveValuePosition += i    
+    }
+  }
+  // remove first negitive postion from array of negitive positions
+  negitiveValuePosition.remove(0)
+  
+  // reverse order of negitive positon array 
+  val removePositions = arrayInReverseBuffer (negitiveValuePosition)
+  
+  // remove negitives
+  for(i <- 0 until removePositions.length)
+  {
+    inputArray.remove(removePositions(i))
+  }
+  val returnArray = inputArray
+  returnArray
 }
+
+
+// function testing calls
 
 val printArray = randomArray(3)
 
@@ -131,5 +167,12 @@ println(s"Reverse sorted Array was " + printArray5.mkString( "<", ", ", ">" ))
 val duplicates  = Array(1,1,1,1,2,4,3,4,5)
 val printArray6 = arrayNoDuplicates(duplicates)
 
-println(s"Reverse sorted Array was " + printArray6.mkString( "<", ", ", ">" ))
+println(s"Duplicates removed  " + printArray6.mkString( "<", ", ", ">" ))
+
+val buffer =  ArrayBuffer[Int](-1,11,1,-2,4,-3,4,5)
+val keepFirstNeg = buffer //renaming
+val printArray7 = arrayyOnlyOneNeg(keepFirstNeg)
+
+println(s"keeping only the first negitive  " + printArray7.mkString( "<", ", ", ">" ))
+
 
