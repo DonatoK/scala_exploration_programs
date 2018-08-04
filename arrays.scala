@@ -67,6 +67,11 @@ def arrayPosNeg (inputArray: Array[Int]): Array[Int]=
   output  
 }
 
+def arrayAverage (inputArray: Array[Double]): Double =
+{
+
+}
+
 val printArray = randomArray(3)
 
 println(s" 3 random Numbers:  ")     
