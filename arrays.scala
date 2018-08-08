@@ -1,3 +1,6 @@
+// Author: Donato Kava, Dated 8/7/2019
+// Scala array exploration file.
+
 import scala.collection.mutable.ArrayBuffer
 import scala.util._
 

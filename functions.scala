@@ -1,3 +1,5 @@
+// Author: Donato Kava, Dated 8/7/2019
+
 // Introduction to functions in scala
 
 import scala.io._
