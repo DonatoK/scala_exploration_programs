@@ -101,7 +101,7 @@ var repeat_limit = 2
 
 while(repeat_limit>=0)
 {
-  val display_message = StdIn.readLine(repeat_limit+" enter a number: ").toInt
+  val display_message = StdIn.readLine(repeat_limit + " enter a number: ").toInt
   val result = signum(display_message)
   println(s" The significant number is " + result)
   repeat_limit -= 1
