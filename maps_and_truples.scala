@@ -6,8 +6,13 @@ import scala.io._
 
 
 // itemCostAndDisocunt: function takes a map of key items string "nameOfItem" and Int value price
- 
+
+// minmax: function that takes and array of values and returns (min,max) pair 
 //def itemCostAndDiscount() 
+def minmax(values: Array[Int]) : Tuple2[Int,Int] =
+{
+
+}
 
 //small UI for map and truple function demos
 var run_UI = "run"
