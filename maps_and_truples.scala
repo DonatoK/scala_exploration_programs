@@ -14,8 +14,8 @@ import scala.util._
 
 def minmax(values: Array[Int]) : Tuple2[Int,Int] =
 {
-  val values_min   = values.max
-  val values_max   = values.min
+  val values_max   = values.max
+  val values_min   = values.min
   val found_minmax = Tuple2(values_min, values_max)
   found_minmax
 }
