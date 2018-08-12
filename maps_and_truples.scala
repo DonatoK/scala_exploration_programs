@@ -10,7 +10,8 @@ import scala.util._
 // itemCostAndDisocunt: function takes a map of key items string "nameOfItem" and Int value price
 
 // minmax: function that takes and array of values and returns (min,max) pair 
-//def itemCostAndDiscount() 
+
+// countRepeats: procedure that counts the number of times words are repeated in a text file. TODO: figureout how to pass the file name to function
 
 def minmax(values: Array[Int]) : Tuple2[Int,Int] =
 {
@@ -33,6 +34,14 @@ def randomArray(size: Int) : ArrayBuffer[Int] =
   varArray
 }
 
+def countRepeats ()  
+{
+// file processing loop 
+val in = new java.util.Scanner(new java.io.File("Old_Proteus_Master Design - CADCAM READ-ME.TXT"))
+// java version returning when I have a scala version.
+while (in.hasNext()) process in.next()
+
+}
 
 //small UI for map and truple function demos
 var run_UI = "run"
