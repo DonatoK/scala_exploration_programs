@@ -1,11 +1,12 @@
 // scala file manulipation exploration
 //
 
-// fileFlip: Function to reverse a filei
+// fileFlip: Function to reverse a file
 //
 //
 
 
+// starting with opening a file and writing it to terminal.
 import scala.io.Source
 
 val myFile = Source.fromFile("Old_Proteus_Master Design - CADCAM READ-ME.TXT")

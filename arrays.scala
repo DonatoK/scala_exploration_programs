@@ -16,6 +16,8 @@ import scala.util._
 // ArrayInReverse: Returns a giveninteger array in reverse sorted order
 // ArrayInReverseBuffer: Minor needed to take a buffer array.
 
+// ArrayReverseUnsorted: Returns a given array in reverse unsorted.
+
 // ArrayNoDuplicates: Returns given integer array with duplicates removed. 
 //  	    	        look in scaladoc
 
@@ -33,6 +35,9 @@ def randomArray(size: Int) : ArrayBuffer[Int] =
   val randomInts = Random
   while (countUp < size)
     {
+    ////////////////////////
+    ///add to buffer Array//
+    ///////////////////////
     varArray += randomInts.nextInt
     countUp  += 1
     }
@@ -81,7 +86,6 @@ def arrayInReverse(inputArray: Array[Int]): Array[Int]=
 {
  // val sortBuffer         = inputArray.sorted ** Buffer Array sort **
  Sorting.quickSort(inputArray) // **Array sort** 
- // No idea how to reverse the order on original array
  val reverseSortedArray = inputArray.sortWith(_>_)
  reverseSortedArray
 }
@@ -90,12 +94,22 @@ def arrayInReverseBuffer (inputArray: ArrayBuffer[Int]): ArrayBuffer[Int]=
 {
   val sortBuffer         = inputArray.sorted //** Buffer Array sort **
  //Sorting.quickSort(inputArray) // **Array sort**
- // No idea how to reverse the order on original array
  val reverseSortedArray = sortBuffer.sortWith(_>_)
  reverseSortedArray
 }
 
+def ArrayReverseUnsorted (inputArray: Array[Int]): ArrayBuffer[Int]=
+{
+   
+  val reversedArray = ArrayBuffer[Int]()
+  //for (i <- inputArray.indicies.reverse)
+   for (i <- inputArray.length -1 to 0 by -1) 
+    {
+    reversedArray += inputArray(i)
+    }
+  reversedArray
 
+}
 def arrayNoDuplicates (inputArray: Array[Int]): Array[Int] =
 {
   val removedDuplicates = inputArray.distinct
@@ -146,8 +160,11 @@ def arrayTimeZones ()
 }
 // function testing calls
 
-val printArray = randomArray(3)
+////////////////
+//static Array//
+////////////////
 
+val printArray = randomArray(3)
 println(s" 3 random Numbers:  ")     
 
 for( i <- 0 until printArray.length)
@@ -177,9 +194,15 @@ println(s"the average of the Array was " + printArray4)
 
 
 val reverseOrderThis  = Array(2,4,5,1,3) 
-val printArray5 = arrayInReverse(reverseOrderThis)
+val printArray5_1 = arrayInReverse(reverseOrderThis)
 
-println(s"Reverse sorted Array was " + printArray5.mkString( "<", ", ", ">" ))
+println(s"Reverse sorted Array was " + printArray5_1.mkString( "<", ", ", ">" ))
+
+// resue reverse order this
+val reverseOrderThis_2  = Array(2,4,5,1,3)
+val printArray5_2  = ArrayReverseUnsorted(reverseOrderThis_2)
+println(s"Reverse unsorted Array was " + printArray5_2.mkString( "<", ", ", ">" ))
+
 
 val duplicates  = Array(1,1,1,1,2,4,3,4,5)
 val printArray6 = arrayNoDuplicates(duplicates)
