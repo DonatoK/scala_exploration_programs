@@ -103,6 +103,9 @@ def ArrayReverseUnsorted (inputArray: Array[Int]): ArrayBuffer[Int]=
    
   val reversedArray = ArrayBuffer[Int]()
   //for (i <- inputArray.indicies.reverse)
+  ////////////////////////
+  // backwards traverse //
+  ////////////////////////
    for (i <- inputArray.length -1 to 0 by -1) 
     {
     reversedArray += inputArray(i)
