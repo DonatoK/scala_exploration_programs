@@ -25,6 +25,8 @@
 // starting with opening a file and writing it to terminal.
     import scala.io.Source
     import java.io.PrintWriter
+    import scala.util.matching.Regex 
+
 // value to hold the output file
     val outFile = new PrintWriter("example.txt")
 
@@ -32,31 +34,46 @@
     val startTime = System.nanoTime // runtime =  endtime(ns)  - starttime(ns)
                                     //           -----------------------------
                                     //                       (10^9)  
+// regex pattern
+val regexPattern = """\s[0-9]+\s+""".r
 
 // value holding file
     val myFile = Source.fromFile("Old_Proteus_Master Design - CADCAM READ-ME.TXT")
 
 // place file lines into an array
+// TODO: Time this to see if placing in an array is needed
     val printTry =  myFile.getLines.toArray
 
 // outputs file to terminal and to a file.
    for( i <- 0 until printTry.length-1)
        {
-        println(s"${printTry(i)}") 
+        println(s"${printTry(i)}")
+
+        // check if regex matches on a line before placing it into the file
+        //
+        // Count and at the end print the number of times this happens
         outFile.println(s"${printTry(i)}") // first attempt at file writing
        }
 
-// same file but backwards
-    for (i<- printTry.length -1 to 0 by -1)
+// DISABLED same file but backwards, ENABLE during timing
+/*    for (i<- printTry.length -1 to 0 by -1)
       println(s"${printTry(i)}")
 
     outFile.close()
     myFile.close() // see if this should be higher
+*/
 
 // Finish Timing
-
+// TODO: add condtional check here for no passed parameters
     println("the other arg, " + args(0)) 
 
     val prog_Run_Time = (System.nanoTime - startTime) / 1e9d
 
     println(s" Total runtime was ${prog_Run_Time} s")
+
+
+// Total Runtime Pre Regex search.
+//  0.060689796 s
+// Total Runtime with finding lines containing SMT
+//
+
