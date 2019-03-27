@@ -21,6 +21,14 @@
 //
 //
 
+// Regex examples from book to build off of
+// Ex.1
+// for(matchstring <- regexPattern.findAllIn("filename or array") // example uses a given string
+// Ex.2
+// regexPattern.findFirstIn("string")
+// Ex.3
+// regexPattern.replaceSomeIn("string", 
+//              m => if (m.matched.toInt %2 == 0) some ("define replace") else None)
 
 // starting with opening a file and writing it to terminal.
     import scala.io.Source
