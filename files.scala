@@ -56,8 +56,10 @@ val regexPattern = """\s[0-9]+\s+""".r
    for( i <- 0 until printTry.length-1)
        {
         println(s"${printTry(i)}")
-
+       
         // check if regex matches on a line before placing it into the file
+        // so far
+        //regexPattern.findFirstIn(s"${printTry(i)}") // tried in term sucessfully
         //
         // Count and at the end print the number of times this happens
         outFile.println(s"${printTry(i)}") // first attempt at file writing
