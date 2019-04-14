@@ -67,8 +67,8 @@ val regexPattern = """\sSMT\s+""".r // Matches the letters SMT seperated by spac
        }
 
 // DISABLED same file but backwards, ENABLE during timing
-/*    for (i<- printTry.length -1 to 0 by -1)
-      println(s"${printTry(i)}")
+/*    for (i<- fileArray.length -1 to 0 by -1)
+      println(s"${fileArray(i)}")
 
     outFile.close()
     myFile.close() // see if this should be higher
@@ -77,7 +77,7 @@ val regexPattern = """\sSMT\s+""".r // Matches the letters SMT seperated by spac
 // Finish Timing
 // TODO: add condtional check here for no passed parameters
 //        needed for setting up conditional timing 
-    println("the other arg, " + args(0)) 
+//   println("the other arg, " + args(0)) // remove to stop needed cmdline args 
 
     val prog_Run_Time = (System.nanoTime - startTime) / 1e9d
 
@@ -87,5 +87,6 @@ val regexPattern = """\sSMT\s+""".r // Matches the letters SMT seperated by spac
 // Total Runtime Pre Regex search.
 //  0.060689796 s
 // Total Runtime with finding lines containing SMT
-//
+//  0.048331443 s // shorter probaly due to small file size, try averaging or a larger file
+
 

@@ -1,0 +1,27 @@
+Top SMT Paste Mask      : Master Design - CADCAM Top SMT Paste Mask.TXT
+Bottom SMT Paste Mask   : Master Design - CADCAM Bottom SMT Paste Mask.TXT
+D12	SMT	W=45th                H=106th               FLASH
+D13	SMT	W=40th                H=60th                FLASH
+D14	SMT	W=60th                H=40th                FLASH
+D16	SMT	W=35th                H=40th                FLASH
+D17	SMT	W=47th                H=106th               FLASH
+D18	SMT	W=106th               H=47th                FLASH
+D19	SMT	W=134th               H=49th                FLASH
+D70	SMT	W=49th                H=134th               FLASH
+D20	SMT	W=43th                H=24th                FLASH
+D21	SMT	W=9.8th               H=18.7th              FLASH
+D22	SMT	W=14.7th              H=9.8th               FLASH
+D23	SMT	W=15.7th              H=66.9th              FLASH
+D24	SMT	W=66.9th              H=15.7th              FLASH
+D25	SMT	W=40th                H=100th               FLASH
+D29	SMT	W=65th                H=120th               FLASH
+D72	SMT	W=45th                H=71th                FLASH
+D35	SMT	W=60th                H=80th                FLASH
+D36	SMT	W=80th                H=60th                FLASH
+D37	SMT	W=55th                H=60th                FLASH
+D38	SMT	W=10.6th              H=19.4th              FLASH
+D39	SMT	W=15.5th              H=10.6th              FLASH
+D40	SMT	W=31.4th              H=82.6th              FLASH
+D41	SMT	W=82.6th              H=31.4th              FLASH
+D42	SMT	W=60th                H=120th               FLASH
+D46	SMT	W=85th                H=140th               FLASH
