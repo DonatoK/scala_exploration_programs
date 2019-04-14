@@ -43,7 +43,8 @@
                                     //           -----------------------------
                                     //                       (10^9)  
 // regex pattern
-val regexPattern = """\s[0-9]+\s+""".r
+//val regexPattern = """\s[SMT]\s+""".r
+val regexPattern = """\sSMT\s+""".r // tested in terminal matches the seperated SMT. TODO: Update if over or under matching
 
 // value holding file
     val myFile = Source.fromFile("Old_Proteus_Master Design - CADCAM READ-ME.TXT")
@@ -55,14 +56,18 @@ val regexPattern = """\s[0-9]+\s+""".r
 // outputs file to terminal and to a file.
    for( i <- 0 until printTry.length-1)
        {
-        println(s"${printTry(i)}")
+       // println(s"${printTry(i)}")
        
         // check if regex matches on a line before placing it into the file
         // so far
-        //regexPattern.findFirstIn(s"${printTry(i)}") // tried in term sucessfully
-        //
+        
+        if(regexPattern.findFirstIn(s"${printTry(i)}").isDefined) // tried in term sucessfully
+        {//
+          println(s"${printTry(i)}")
+         // println(s"printing?")
         // Count and at the end print the number of times this happens
         outFile.println(s"${printTry(i)}") // first attempt at file writing
+        }
        }
 
 // DISABLED same file but backwards, ENABLE during timing
