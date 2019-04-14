@@ -43,30 +43,26 @@
                                     //           -----------------------------
                                     //                       (10^9)  
 // regex pattern
-//val regexPattern = """\s[SMT]\s+""".r
-val regexPattern = """\sSMT\s+""".r // tested in terminal matches the seperated SMT. TODO: Update if over or under matching
+val regexPattern = """\sSMT\s+""".r // Matches the letters SMT seperated by spaces  TODO: Update if over or under matching
 
 // value holding file
     val myFile = Source.fromFile("Old_Proteus_Master Design - CADCAM READ-ME.TXT")
 
 // place file lines into an array
-// TODO: Time this to see if placing in an array is needed
-    val printTry =  myFile.getLines.toArray
+// TODO: TIMING: See if placing in an array is needed
+    val fileArray =  myFile.getLines.toArray
 
-// outputs file to terminal and to a file.
-   for( i <- 0 until printTry.length-1)
+// Search the created arry
+   for( i <- 0 until fileArray.length-1)
        {
-       // println(s"${printTry(i)}")
-       
-        // check if regex matches on a line before placing it into the file
-        // so far
-        
-        if(regexPattern.findFirstIn(s"${printTry(i)}").isDefined) // tried in term sucessfully
-        {//
-          println(s"${printTry(i)}")
-         // println(s"printing?")
-        // Count and at the end print the number of times this happens
-        outFile.println(s"${printTry(i)}") // first attempt at file writing
+        // println(s"${fileArray(i)}")
+
+        // Each line check if it the regex matches, print to terminal and file
+        if(regexPattern.findFirstIn(s"${fileArray(i)}").isDefined)
+        {
+          println(s"${fileArray(i)}")
+          // TODO: make a count and at the end print the number of times this happens
+          outFile.println(s"${fileArray(i)}")  //output the regex matched lines to a file 
         }
        }
 
@@ -80,6 +76,7 @@ val regexPattern = """\sSMT\s+""".r // tested in terminal matches the seperated 
 
 // Finish Timing
 // TODO: add condtional check here for no passed parameters
+//        needed for setting up conditional timing 
     println("the other arg, " + args(0)) 
 
     val prog_Run_Time = (System.nanoTime - startTime) / 1e9d
